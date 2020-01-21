@@ -1,0 +1,74 @@
+Lambdas
+--------
+
+1. Why?
+   - Enables functional programming
+   - Readable and concise code (removes some boiler plate code)
+   - Enables us to write easier to use APIs and libraries
+   - Enables support for parallel processing
+
+2. Functional programming vs OOP
+   - Better readable & elegant code (when the situation arises)
+
+   Code in OOP
+        - Everything is an object. All code blocks are associated with classes and objects. 
+          Every action(method) should be part of some class  
+          
+   Lambdas lets us to create entities which are just functions called as Lambda Expressions. They don't belong to
+   methods of a class, instead they're functions that exist in isolation and those functions can be treated as values.
+   
+   Inline values : String name="foo"; double pi = 3.14;
+   
+   An example for lambda
+   			
+   			aBlockOfCode = {
+            ....
+   			}
+   			
+   			aBlockOfCode = public void greet() {
+					System.out.print("Hey World!");
+			}
+			
+			Access modifier , method name and return type are not needed.
+			
+			aBlockOfCode = () -> {
+					System.out.print("Hey World!");
+			}
+			
+			If the method has one line
+			greetingFunction = () -> System.out.print("Hey World!");
+			greet(greetingFunction);
+			greet(() -> System.out.print("Hey World!"));
+			
+			doubleNumberFunction = (int num) -> {
+				return num*2;
+			}
+			
+			doubleNumberFunction = (int num) -> num*2;
+			
+   			addNumbersFunction = (int a , int b) -> a + b;
+   			
+   			safeDivideFuntion = (int a , int b) -> {
+   				if(b==0)
+   					return 0;
+   				else
+   					return a/b;
+   			}
+   			
+   			stringLength = (String s) -> s.length();
+   			
+   			
+In Java for declaring lambda expressions interfaces are used. 
+When an interface is used to declare a lambda expression it should have only one method which matches your lambda expression signature   	
+
+
+	    Greeting greeting = new HeyWorldGreeting();
+	    Greeting greetingFunction = () -> System.out.println("Hey World!");
+	    
+	    greeting.perform();
+	    greetingFunction.perform();
+	    
+	    How to execute lambda expressions - By calling the interface method on it , just as if it were an instance of the class
+	    Lambda expression behaves as implementation of the interface by implementing the function not the class.
+	    Same could be done by anonymous inner class (be careful of treating lambdas as shortcut to  anonymous inner class as they seem to be)
+   
