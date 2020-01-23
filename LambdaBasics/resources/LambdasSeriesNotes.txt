@@ -1,13 +1,13 @@
 Lambdas
 --------
 
-1. Why?
+Why?
    - Enables functional programming
-   - Readable and concise code (removes some boiler plate code)
+   - Readable and concise code (removes some boiler plate code - refer to RunnableExample anonymous inner class implementation)
    - Enables us to write easier to use APIs and libraries
    - Enables support for parallel processing
 
-2. Functional programming vs OOP
+Functional programming vs OOP
    - Better readable & elegant code (when the situation arises)
 
    Code in OOP
@@ -71,4 +71,15 @@ When an interface is used to declare a lambda expression it should have only one
 	    How to execute lambda expressions - By calling the interface method on it , just as if it were an instance of the class
 	    Lambda expression behaves as implementation of the interface by implementing the function not the class.
 	    Same could be done by anonymous inner class (be careful of treating lambdas as shortcut to  anonymous inner class as they seem to be)
-   
+	    
+Type Inference - TypeInferenceExample	    
+The reason why a new type is not introduced for declaring lamdbas is for backward compatibility - RunnableExample       
+
+Incase of interfaces with *single abstract* method instead of writing implementation classes or anonymous inner class implementations (Boiler plate code) 
+we can use lambdas to solve the same.
+
+From Java 8 , interfaces can contain not only abstract methods also methods with implementations (Concrete methods?) 
+Interface with only one abstract method is called Functional interface
+
+Marking an interface as Functional interface (Annotation @FuntionalInterface)
+While writing interfaces for lambdas although it is option to write @FuntionalInterface, it is recommended to convey the intention of that interface.
