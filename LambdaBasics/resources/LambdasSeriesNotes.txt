@@ -58,6 +58,8 @@ Functional programming vs OOP
    			stringLength = (String s) -> s.length();
    			
    			
+   			
+   			
 In Java for declaring lambda expressions interfaces are used. 
 When an interface is used to declare a lambda expression it should have only one method which matches your lambda expression signature   	
 
@@ -74,7 +76,8 @@ When an interface is used to declare a lambda expression it should have only one
 	    
 Type Inference - TypeInferenceExample	    
 The reason why a new type is not introduced for declaring lamdbas is for backward compatibility - RunnableExample       
-
+----- new Thread(runnableInterfaceImplementation)
+      if a new lambda type is introduced then the backward compatibility is lost. That's why lamdbas are of the type of the function interface
 Incase of interfaces with *single abstract* method instead of writing implementation classes or anonymous inner class implementations (Boiler plate code) 
 we can use lambdas to solve the same.
 
@@ -83,3 +86,13 @@ Interface with only one abstract method is called Functional interface
 
 Marking an interface as Functional interface (Annotation @FuntionalInterface)
 While writing interfaces for lambdas although it is option to write @FuntionalInterface, it is recommended to convey the intention of that interface.
+
+
+java.util.function : Contains some out of the box interfaces to handle some common scenarios
+
+ExceptionHandling
+
+Closures
+
+ThisReference : In a lambda this still holds the value of the object which invoked the lamdba	
+In anonymous inner class when you using the this reference , you have just overwritten the this reference, the value changes inside the anonymous inner class 
